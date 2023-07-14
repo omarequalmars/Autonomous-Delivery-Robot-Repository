@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+<include file="$(find gazebo_pkg)/launch/mybot_maze.launch"/>
+
+<!-- turned off gmapping because i used it once to extract a map and now i have it. -->
+<!-- <include file="$(find gossa_nav)/launch/gmapping.launch"/> -->
+
+<!-- <node name="teleoperation" pkg="turtlebot3_teleop" type="turtlebot3_teleop_key" >
+</node> -->
+
+<include file="$(find gossa_description)/launch/mybot_rviz.launch"/>
+
+
+
+</launch>

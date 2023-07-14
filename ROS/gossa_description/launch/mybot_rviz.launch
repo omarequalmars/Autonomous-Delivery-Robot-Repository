@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find gossa_description)/urdf/gossa.xacro'"/>
+
+  
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="use_gui" value="false"/>
+  </node>
+
+  <!-- Combine joint values -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+  
+
+  <!-- Show in Rviz   -->
+  <!-- args="-d $(find turtlebot3_navigation)/rviz/turtlebot3_navigation.rviz" -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find gossa_description)/rviz/nav.rviz" />  
+
+</launch>
